@@ -5,3 +5,76 @@
     grid-area: cd;
 }
 
+.cards__rendering-control {
+    display: flex;
+    justify-content: space-between;
+}
+
+// Пагинация
+.cards__pagination {
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cards__page {
+    margin-right: 15px;
+    &:nth-last-of-type(1) {
+        margin-right: 0;
+    }
+}
+
+.cards__page_button {
+    border:0;
+    cursor: pointer;
+
+    width: 35px;
+    height: 35px;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    line-height: 1;
+    font-size: 16px;
+
+    background-color: $pagination-color;
+    transition: .1s;
+
+    &:hover {
+        transition: .2s;
+        background-color: $pagination-color-hover;
+    }
+
+    &:focus {
+        transition: .2s;
+        background-color: $pagination-color-active;
+    }
+}
+
+//Сортировка выдачи
+.cards__sort-list {
+    width: 200px;
+    padding: 8px;
+    border: 1px solid $input-border-color;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    transition: .1s;
+    box-sizing: content-box;
+
+    &:hover {
+        transition: .2s;
+        border: 1px solid $active-color;
+    }
+}
+
+.cards__sort-item {
+    height: 20px;
+    margin: 5px;
+    font-size: 14px;
+}
+
