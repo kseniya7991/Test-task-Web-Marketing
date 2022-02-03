@@ -9,9 +9,16 @@
 </head>
 
 <body class="page">
-    <header class="header"></header>
-    <nav class="navigation"></nav>
-    <nav class="breadcrumb"></nav>
+    <header class="header">Header</header>
+    <!--template__navigation-->
+    <nav class="navigation">
+        <ul class="navigation__list">
+        </ul>
+    </nav>
+
+    <nav class="breadcrumb">
+        <ul class="breadcrumb__list"></ul>
+    </nav>
     <main class="main-block">
         <section class="sidebar">
             <p class="sidebar__results"></p>
@@ -77,6 +84,18 @@
         </div>
         <p class="footer__text-info"></p>
     </footer>
+
+
+    <template class="template__navigation">
+        <li class="navigation__item">
+            <a href="" class="navigation__link"></a>
+        </li>
+      </template>
+      <template class="template__breadcrumb">
+        <li class="breadcrumb__item">
+            <a href="" class="breadcrumb__link"></a>
+        </li>
+      </template>
 </body>
 
 </html>

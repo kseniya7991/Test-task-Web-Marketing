@@ -2,7 +2,7 @@
 
 .page {
     background-color: $background-color;
-    
+
     max-width: 1140px;
     height: 100%;
     margin: 0 auto;
@@ -12,5 +12,5 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }

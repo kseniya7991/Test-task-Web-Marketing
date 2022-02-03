@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.header{
+    width: 100%;
+    padding: 30px 16px 30px 16px;
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+
+    background-color: $blocks-color;
+
+    font-size: 20px;
+    color:$headers-color;
+}
