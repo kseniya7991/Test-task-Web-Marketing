@@ -31,8 +31,33 @@ module.exports = {
             type: 'asset/inline',
         }, 
         {
-            test: /\.(scss|css)$/,
-            use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
+            test: /\.(sass|scss|svg|png|jpe?g)$/,
+            use: [
+             'style-loader', 
+             {
+                 loader: 'css-loader?url=false',
+                 options: {
+                    sourceMap: true,
+                 }
+             },
+             'postcss-loader', 
+             {
+                loader: "resolve-url-loader", //resolve-url-loader needs to come *BEFORE* sass-loader
+                options: {
+                  sourceMap: true
+                }
+              },
+             {
+                loader: 'sass-loader',
+                options: {
+                   sourceMap: true,
+                   sassOptions: {
+                    includePaths: [
+                        './src/styles',
+                      ],
+                   }
+                },
+            }],
           },
        ]
     },

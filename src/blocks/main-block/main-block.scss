@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.main-block {
+    display: grid;
+    justify-content: flex-start;
+    grid-template-columns: 270px 1fr;
+    grid-template-rows: max-content max-content;
+    position: relative;
+    grid-template-areas:
+    ". hd"
+    "sb cd";
+    grid-gap: 20px;
+}
+
+.main-block__heading{
+    grid-area: hd;
+}

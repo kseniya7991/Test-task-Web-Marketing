@@ -1,0 +1,155 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.sidebar {
+    width: 270px;
+    height: auto;
+    background-color: $blocks-color;
+    grid-area: sb;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+
+    padding: 20px;
+}
+
+.sidebar__results {
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+
+    border-bottom: 1px solid $navigation-color;
+    padding-bottom: 15px;
+}
+
+.sidebar__filter-name {
+    position: relative;
+    width: 100%;
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
+.sidebar__params-item{  
+    margin-bottom: 5px; 
+    position: relative;   
+}
+
+.sidebar__params {
+    display: flex;
+    padding: 0;
+    margin: 10px 0 20px 0;
+    list-style-type: none;
+}
+
+
+//Стили для чекбоксов и радио кнопок
+.sidebar__params_checkbox {
+    flex-direction: column;
+}
+
+.sidebar__params-label {
+    position: relative;
+    cursor: pointer;
+}
+
+.sidebar__params-input {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    opacity: 0;
+}
+
+.sidebar__params-input_checkbox + label {
+    position: relative;
+    &::before{
+        @include customInputBefore;
+
+        background-image: url('https://downloader.disk.yandex.ru/preview/237b361a85b0a62fc877c1803de8c29c1ea4d0e6e38ee59734c2f66805203389/61fc6c38/txBud0ikLK2oc5K_AXf9jcjArEj88XAnsBoEK7Jwbe4Hfc6ZFOAXb1OShRUmOj7VN-pSd4_fcRekkXhXWo73pg%3D%3D?uid=0&filename=check-mark.png&disposition=inline&hash=&limit=0&content_type=image%2Fpng&owner_uid=0&tknv=v2&size=2048x2048');
+
+        border-radius: 0;
+        background-size: 90%;
+    }
+}
+
+.sidebar__params-input_checkbox:focus+label::before {
+    background-color: $input-color-active;
+    transition: .1s;
+}
+
+.sidebar__params-input_radio + label {
+    position: relative;
+    
+    &::before{
+        @include customInputBefore;
+        border-radius: 50%;
+    }
+}
+
+.sidebar__params-input_radio:focus+label::before{
+    border: 1px solid $input-color;
+    background-color: $input-color-active;
+    transition: .1s;
+}
+
+//Стили для текстовых инпутов
+.sidebar__params-item_text {
+    width: 45%;
+    &:nth-last-of-type(1) {
+        margin-right: 0;
+    }
+}
+.sidebar__params-item_keywords {
+    width: 100%;
+}
+
+.sidebar__params_text {
+    justify-content: space-between;
+}
+.sidebar__params-input_text {
+    border:1px solid $input-border-color;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid $input-border-color;
+    transition: .2s;
+
+    &::placeholder {
+        color: $input-placeholder-color;
+    };
+    &:focus {
+        transition: .2s;
+        outline: none;
+        box-shadow: 0px 0px 0px 1px $input-color-active;
+        border: 1px solid $input-color-active;
+        border-radius: 0;
+    }
+};
+
+.sidebar__button-search {
+    text-transform: uppercase;
+    border: 0;
+    background-color: $primary-color;
+    color: $button-text-color;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: .2s;
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0px 2px 5px 1px $button-hover;
+        transition: .2s;
+    }
+
+    &:active {
+        box-shadow: 0px 1px 2px 1px $button-hover;
+        transition: .1s;
+    }
+}

@@ -20,46 +20,70 @@
         <ul class="breadcrumb__list"></ul>
     </nav>
     <main class="main-block">
-        <section class="sidebar">
-            <p class="sidebar__results"></p>
-            <dl class="sidebar__filter">
-                <dt class="sidebar__filter-name"></dt>
-                <div>
-                    <dd class="sidebar__params">
-                        <label class="sidebar__params-label">
-                            <input class="sidebar__params-input">
-                            <span class="sidebar__params-name"></span>
-                        </label>
-                    </dd>
-                </div>
-            </dl>
-            <dl class="sidebar__filter">
-                <dt class="sidebar__filter-name"></dt>
-                <div>
-                    <dd class="sidebar__params">
-                        <label class="sidebar__params-label">
-                            <input class="sidebar__params-input">
-                            <span class="sidebar__params-name"></span>
-                        </label>
-                    </dd>
-                </div>
-            </dl>
-            <dl class="sidebar__filter">
-                <dt class="sidebar__filter-name"></dt>
-                <div>
-                    <input>
-                    <input>
-                </div>
-            </dl>
-            <dl class="sidebar__filter">
-                <dt class="sidebar__filter-name"></dt>
-                <div>
-                    <input>
-                </div>
-            </dl>
-        </section>
+        <h1 class="main-block__heading"></h1>
+        <aside class="sidebar">
+            <p class="sidebar__results">5 Results Found</p>
+            <span class="sidebar__filter-name">Seller's country</span>
+            <ul class="sidebar__params sidebar__params_checkbox">
+                <li class="sidebar__params-item">
+                    <input type="checkbox" id="country_all" name="all" value="all" class="sidebar__params-input sidebar__params-input_checkbox sidebar__params-input_checked" checked>
+                    <label class="sidebar__params-label" for="country_all">All</label>
+                </li>
+                <li class="sidebar__params-item">
+                        <input type="checkbox" id="country_germany" name="germany" value="germany" class="sidebar__params-input sidebar__params-input_checkbox">
+                        <label class="sidebar__params-label" for="country_germany">Germany</label>
+                </li>
+                <li class="sidebar__params-item">
+                    <input type="checkbox" id="country_netherlands" name="netherlands" value="netherlands" class="sidebar__params-input sidebar__params-input_checkbox">
+                    <label class="sidebar__params-label" for="country_netherlands">Netherlands</label>
+                </li>
+                <li class="sidebar__params-item">
+                    <input type="checkbox" id="country_norway" name="norway" value="norway" class="sidebar__params-input sidebar__params-input_checkbox">
+                        <label class="sidebar__params-label" for="country_norway">Norway</label>
+                </li>
+                <li class="sidebar__params-item">
+                    <input type="checkbox" id="country_sweden" name="sweden" value="sweden" class="sidebar__params-input sidebar__params-input_checkbox">
+                    <label class="sidebar__params-label" for="country_sweden">Sweden</label>
+                </li>
+            </ul>
+            <span class="sidebar__filter-name">Types</span>
+            <ul class="sidebar__params sidebar__params_checkbox">
+                <li class="sidebar__params-item">
+                    <input type="radio" id="types_coaches" name="coaches" value="coaches" class="sidebar__params-input sidebar__params-input_radio sidebar__params-input_checked" checked>
+                    <label class="sidebar__params-label" for="types_coaches">Coaches</label>
+                </li>
+                <li class="sidebar__params-item">
+                        <input type="radio" id="types_subbuses" name="subbuses" value="subbuses" class="sidebar__params-input sidebar__params-input_radio">
+                        <label class="sidebar__params-label" for="types_subbuses">Suburb Buses</label>
+                </li>
+                <li class="sidebar__params-item">
+                    <input type="radio" id="types_minibuses" name="minibuses" value="minibuses" class="sidebar__params-input sidebar__params-input_radio">
+                    <label class="sidebar__params-label" for="types_minibuses">Minibuses</label>
+                </li>
+                <li class="sidebar__params-item">
+                    <input type="radio" id="types_campers" name="campers" value="campers" class="sidebar__params-input sidebar__params-input_radio">
+                    <label class="sidebar__params-label" for="types_campers">Campers</label>
+                </li>
+            </ul>
+            <span class="sidebar__filter-name">Price, EUR</span>
+            <ul class="sidebar__params sidebar__params_text">
+                <li class="sidebar__params-item_text">
+                    <input type="text" id="price_min"  placeholder="min" name="coaches" value="" class="sidebar__params-input_text" checked>
+                </li>
+                <li class="sidebar__params-item_text">
+                    <input type="text" id="price_max" placeholder="max" name="subbuses" value="" class="sidebar__params-input_text">
+                </li>
+            </ul>
+            <span class="sidebar__filter-name">Keywords</span>
+            <ul class="sidebar__params sidebar__params_text">
+                <li class="sidebar__params-item_text sidebar__params-item_keywords">
+                    <input type="text" id="keywords"  placeholder="Keywords" name="keywords" value="" class="sidebar__params-input_text sidebar__params-input_keywords" checked>
+                </li>
+            </ul>
+            <button type="button" class="sidebar__button-search">search</button>
+        </aside>
         <section class="cards">
-            <h1 class="cards__heading"></h1>
+           
             <ul class="cards__list">
                 <li class="cards__item"></li>
                 <li class="cards__item"></li>

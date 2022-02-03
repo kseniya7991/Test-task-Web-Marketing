@@ -20,19 +20,23 @@
     margin-right: 30px;
     position: relative;
     color: $text-color;
-
-    &:nth-last-of-type(1) {
-        margin-right: 0;
-    }
-
     &::after {
         content:">";
         position: absolute;
         right: -20px;
     }
 
+    &:nth-last-of-type(1) {
+        margin-right: 0;
+        &::after {
+            content: ''
+        }
+    }
+
+
     &:nth-of-type(1) {
         color: $active-link-color;
+
     }
 
 }
