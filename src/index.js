@@ -1,7 +1,13 @@
 import './styles/main.scss'
+import data from'../dataset.json'
 
-const heading = document.createElement('h1')
-heading.textContent = "www";
+console.log(data.page_meta);
+{/* <meta name="keywords" content="ключевые слова" /> */}
+function updateMeta() {
+document.title = data.page_meta.title;
 
-const root = document.querySelector('#root')
-root.append(heading)
+console.log(document.querySelector('meta[name="description"]'));
+document.querySelector('meta[name="description"]').setAttribute("content", data.page_meta.meta_description);
+document.querySelector('meta[name="keywords"]').setAttribute("content", data.page_meta.meta_keywords);
+}
+updateMeta();
