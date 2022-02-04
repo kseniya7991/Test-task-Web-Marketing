@@ -4,9 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+
 module.exports = {
     entry: {
-        main: path.resolve(__dirname, './src/index.js'),
+        entry: ["./src/styles/main.scss", "./src/index.js"],
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -31,34 +32,21 @@ module.exports = {
             type: 'asset/inline',
         }, 
         {
-            test: /\.(sass|scss|svg|png|jpe?g)$/,
-            use: [
-             'style-loader', 
-             {
-                 loader: 'css-loader?url=false',
-                 options: {
-                    sourceMap: true,
-                 }
-             },
-             'postcss-loader', 
-             {
-                loader: "resolve-url-loader", //resolve-url-loader needs to come *BEFORE* sass-loader
+            test: /\.(scss|css)$/,
+            use: ['style-loader', 'css-loader', 'postcss-loader', 
+            {
+                loader: 'resolve-url-loader',
                 options: {
-                  sourceMap: true
+                    sourceMap: true,
                 }
-              },
-             {
+            }, 
+            {
                 loader: 'sass-loader',
                 options: {
-                   sourceMap: true,
-                   sassOptions: {
-                    includePaths: [
-                        './src/styles',
-                      ],
-                   }
-                },
+                    sourceMap: true,
+                  }
             }],
-          },
+        },
        ]
     },
     plugins: [

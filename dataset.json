@@ -50,7 +50,7 @@
       "mileage": 486647,
       "mileage_measure": "km",
       "axle_configuration": "6x2",
-      "power": 440,
+      "power": "440",
       "power_measure": "hp",
       "payload": "16 550 kg",
       "gross_weight": "25 700 kg",
