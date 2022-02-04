@@ -3,7 +3,7 @@
 
 .sidebar {
     width: 270px;
-    height: auto;
+    height: max-content;
     background-color: $blocks-color;
     grid-area: sb;
     box-sizing: border-box;

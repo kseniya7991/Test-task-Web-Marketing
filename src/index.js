@@ -13,8 +13,10 @@ function updateMeta() {
 document.title = data.page_meta.title;
 document.querySelector('meta[name="description"]').setAttribute("content", data.page_meta.meta_description);
 document.querySelector('meta[name="keywords"]').setAttribute("content", data.page_meta.meta_keywords);
+document.querySelector('.main-block__heading').textContent = data.page_meta.h1;
 }
 updateMeta();
+
 
 //Создание экземпляра навигации, отрисовка, добавление в дерево
 export const addNavigationItem = (item, templateSelector, itemSelector, linkSelector, listName) => {
