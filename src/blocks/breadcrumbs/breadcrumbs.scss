@@ -1,55 +1,54 @@
 @import '../../styles/variables.scss';
 
+//Хлебные крошки
 .breadcrumb {
     width: 100%;
     padding: 0 15px;
     margin-bottom: 20px;
     box-sizing: border-box;
-}
 
-.breadcrumb__list {
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    justify-content: flex-start;
-    padding: 0;
-    margin: 0;
-}
 
-.breadcrumb__item {
-    margin-right: 30px;
-    position: relative;
-    color: $text-color;
-    &::after {
-        content:">";
-        position: absolute;
-        right: -20px;
+    &__list {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+
+        @include resetUl;
     }
 
-    &:nth-last-of-type(1) {
-        margin-right: 0;
+    &__item {
+        margin-right: 30px;
+        position: relative;
+        color: $black;
         &::after {
-            content: ''
+            content:">";
+            position: absolute;
+            right: -20px;
+        }
+    
+        &:nth-last-of-type(1) {
+            margin-right: 0;
+            &::after {
+                content: ''
+            }
+        }
+    
+        &:nth-of-type(1) {
+            color: $active-link-color;
         }
     }
 
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        font-weight: 400;
+        font-size: 17px;
 
-    &:nth-of-type(1) {
-        color: $active-link-color;
-
-    }
-
-}
-
-.breadcrumb__link {
-    text-decoration: none;
-    color: inherit;
-    font-weight: 400;
-    font-size: 17px;
-    transition: .3s;
-
-    &:hover {
-        color: $active-link-color;
         transition: .3s;
+    
+        &:hover {
+            color: $active-link-color;
+            transition: .3s;
+        }
     }
 }

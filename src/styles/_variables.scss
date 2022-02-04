@@ -1,36 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 $primary-color: #56CCF2;
+$active-link-color: #2F80ED;
+$black: #333;
+$white: #fff;
+$default-text: #4F4F4F;
+$description-text: #828282;
+$borders: #BDBDBD;
+$body-background: #D9D9D9;
 
 $font-family: 'Roboto', sans-serif;
-$background-color: #D9D9D9;
-$blocks-color: #fff;
 
-$text-color: #000;
-$black: #000;
-$white: #fff;
-$heading-color: #000;
-$active-link-color: #2F80ED;
-
-$input-color-active: #56CCF2;
-$active-color: #56CCF2; 
-
-$input-color: #fff;
-$input-border-color: #BDBDBD;
-$input-placeholder-color: #8D8D8D;
-$button-text-color: #fff;
 $button-hover: gray;
+$pagination-hover: #aae6fa;
+$card-hover: #a1a1a1;
 
-$pagination-color: #fff;
-$pagination-color-hover: #aae6fa;
-$pagination-color-active: #56CCF2; 
-
-$description-color: #828282;
-$card-params-text-color: #fff;
-$card-params-color:  #C4C4C4;
-$price-color: #4F4F4F;
-$default-text: #4F4F4F;
-$card-hover-color: #a1a1a1;
-
-
-$navigation-color: #8D8D8D;
+$params-background:  #C4C4C4;

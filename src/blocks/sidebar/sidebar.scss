@@ -4,7 +4,7 @@
 .sidebar {
     width: 270px;
     height: max-content;
-    background-color: $blocks-color;
+    background-color: $white;
     grid-area: sb;
     box-sizing: border-box;
 
@@ -20,7 +20,7 @@
     font-weight: 500;
     width: 100%;
 
-    border-bottom: 1px solid $navigation-color;
+    border-bottom: 1px solid $borders;
     padding-bottom: 15px;
 }
 
@@ -43,15 +43,18 @@
 
 .sidebar__params {
     display: flex;
-    padding: 0;
+    @include resetUl;
+
     margin: 10px 0 20px 0;
-    list-style-type: none;
 }
 
 
 //Стили для чекбоксов и радио кнопок
-.sidebar__params_checkbox {
-    flex-direction: column;
+.sidebar__params-input {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    opacity: 0;
 }
 
 .sidebar__params-label {
@@ -59,11 +62,9 @@
     cursor: pointer;
 }
 
-.sidebar__params-input {
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    opacity: 0;
+//Чекбоксы
+.sidebar__params_checkbox {
+    flex-direction: column;
 }
 
 .sidebar__params-input_checkbox + label {
@@ -79,10 +80,11 @@
 }
 
 .sidebar__params-input_checkbox:focus+label::before {
-    background-color: $input-color-active;
+    background-color: $primary-color;
     transition: .1s;
 }
 
+//Радиокнопки
 .sidebar__params-input_radio + label {
     position: relative;
     
@@ -93,10 +95,11 @@
 }
 
 .sidebar__params-input_radio:focus+label::before{
-    border: 1px solid $input-color;
-    background-color: $input-color-active;
+    border: 1px solid $white;
+    background-color: $primary-color;
     transition: .1s;
 }
+
 
 //Стили для текстовых инпутов
 .sidebar__params-item_text {
@@ -113,31 +116,33 @@
     justify-content: space-between;
 }
 .sidebar__params-input_text {
-    border:1px solid $input-border-color;
+    border:1px solid $borders;
     width: 100%;
     box-sizing: border-box;
     padding: 8px;
     font-size: 14px;
-    border: 1px solid $input-border-color;
+    border: 1px solid $borders;
     transition: .2s;
 
     &::placeholder {
-        color: $input-placeholder-color;
+        color: $borders;
     };
     &:focus {
         transition: .2s;
         outline: none;
-        box-shadow: 0px 0px 0px 1px $input-color-active;
-        border: 1px solid $input-color-active;
+        box-shadow: 0px 0px 0px 1px $primary-color;
+        border: 1px solid $primary-color;
         border-radius: 0;
     }
 };
 
+
+//Кнопка поиска
 .sidebar__button-search {
     text-transform: uppercase;
     border: 0;
     background-color: $primary-color;
-    color: $button-text-color;
+    color: $white;
     padding: 10px;
     box-sizing: border-box;
     transition: .2s;

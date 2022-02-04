@@ -10,12 +10,14 @@
     ". hd"
     "sb cd";
     grid-gap: 20px;
-}
+    margin-bottom: 20px;
 
-.main-block__heading{
-    grid-area: hd;
-    margin: 0;
-    font-size: 22px;
-    line-height: 26px;
-    color: $black;
+    &__heading {
+        grid-area: hd;
+        margin: 0;
+        
+        font-size: 22px;
+        line-height: 26px;
+        color: $black;
+    }
 }
