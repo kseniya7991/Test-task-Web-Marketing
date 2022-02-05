@@ -27,13 +27,42 @@
 .sidebar__filter-name {
     position: relative;
     width: 100%;
+    cursor: pointer;
 
     &::after {
         content: "";
+        width: 15px;
+        height: 15px;
+        background-image: url('../../img/down-arrow.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 20%;
         position: absolute;
         right: 0;
+        bottom: 0;
+        transform: rotate(180deg);
         cursor: pointer;
+
+        @include rotateArrowClose;
+        animation: rotateArrowClose .5s forwards;
     }
+
+
+
+    &_active {
+        &::after {
+            @include rotateArrowOpen;
+            animation: rotateArrowOpen .5s forwards;
+        }
+    }
+
+    // Поведение стрелки при нажатии на фильтр
+    &_active {
+        
+    }
+
+
 }
 
 .sidebar__params-item{  
@@ -44,8 +73,23 @@
 .sidebar__params {
     display: flex;
     @include resetUl;
+    overflow: hidden;
+    padding-left: 5px;
+    max-height: 0;
+    transition: all 0.3s ease-out;
+    opacity: 0;
 
     margin: 10px 0 20px 0;
+
+    //Плавное раскрытие списка параметров
+    &_active {
+        -webkit-transition:max-height 0.4s linear;
+        -moz-transition:max-height 0.4s linear;
+        transition:max-height 0.4s linear;
+        transition: .7s;
+        opacity: 1;
+        max-height: 300px;
+    }
 }
 
 

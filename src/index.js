@@ -8,6 +8,8 @@ import Section from './components/section.js';
 const navListSection = '.navigation__list';
 const crumbsListSection = '.breadcrumb__list';
 const cardsSection = '.cards__list';
+const filter = document.querySelectorAll('.sidebar__filter-name');
+const sort = document.querySelectorAll('.cards__sort-list');
 
 function updateMeta() {
 document.title = data.page_meta.title;
@@ -81,6 +83,38 @@ const cardList = new Section(
     },
     cardsSection,
 )
+
+// Открытие фильтра в сайдбаре
+
+function filterOpen(item) {
+    const paramsList = document.querySelector(`.sidebar__params_${item.id}`);
+    paramsList.classList.toggle('sidebar__params_active');
+    item.classList.toggle('sidebar__filter-name_active');
+    return;
+} 
+
+function sortSelect(item) {
+    const parentSort = item.closest('.cards__sort')
+    parentSort.classList.toggle('cards__sort_active');
+    return;
+}
+
+
+filter.forEach((item) => {
+    item.addEventListener('click', () => {
+        filterOpen(item)
+    })
+})
+
+sort.forEach((item) => {
+    item.addEventListener('click', () => {
+        sortSelect(item);
+    })
+})
+
+console.log(sort)
+
+
 
 navList.renderer(data.nav)
 crumbsList.renderer(data.breadcrumbs)

@@ -22,8 +22,8 @@
     <h1 class="main-block__heading"></h1>
     <aside class="sidebar">
       <p class="sidebar__results">5 Results Found</p>
-      <span class="sidebar__filter-name">Seller's country</span>
-      <ul class="sidebar__params sidebar__params_checkbox">
+      <span class="sidebar__filter-name" id="country">Seller's country</span>
+      <ul class="sidebar__params sidebar__params_checkbox sidebar__params_country">
         <li class="sidebar__params-item">
           <input type="checkbox" id="country_all" name="all" value="all"
             class="sidebar__params-input sidebar__params-input_checkbox sidebar__params-input_checked" checked />
@@ -50,8 +50,8 @@
           <label class="sidebar__params-label" for="country_sweden">Sweden</label>
         </li>
       </ul>
-      <span class="sidebar__filter-name">Types</span>
-      <ul class="sidebar__params sidebar__params_checkbox">
+      <span class="sidebar__filter-name"  id="types">Types</span>
+      <ul class="sidebar__params sidebar__params_checkbox sidebar__params_types">
         <li class="sidebar__params-item">
           <input type="radio" id="types_coaches" name="coaches" value="coaches"
             class="sidebar__params-input sidebar__params-input_radio sidebar__params-input_checked" checked />
@@ -73,8 +73,8 @@
           <label class="sidebar__params-label" for="types_campers">Campers</label>
         </li>
       </ul>
-      <span class="sidebar__filter-name">Price, EUR</span>
-      <ul class="sidebar__params sidebar__params_text">
+      <span class="sidebar__filter-name" id="prices">Price, EUR</span>
+      <ul class="sidebar__params sidebar__params_text sidebar__params_prices">
         <li class="sidebar__params-item_text">
           <input type="text" id="price_min" placeholder="min" name="coaches" value="" class="sidebar__params-input_text"
             checked />
@@ -84,8 +84,8 @@
             class="sidebar__params-input_text" />
         </li>
       </ul>
-      <span class="sidebar__filter-name">Keywords</span>
-      <ul class="sidebar__params sidebar__params_text">
+      <span class="sidebar__filter-name" id="keywords">Keywords</span>
+      <ul class="sidebar__params sidebar__params_text sidebar__params_keywords">
         <li class="sidebar__params-item_text sidebar__params-item_keywords">
           <input type="text" id="keywords" placeholder="Keywords" name="keywords" value=""
             class="sidebar__params-input_text sidebar__params-input_keywords" checked />
@@ -111,7 +111,8 @@
         </ul>
         <div class="cards__sort">
           <span class="cards__sort-text">Sort by</span>
-          <select class="cards__sort-list">
+          <select class="cards__sort-list" required>
+            <option class="cards__sort-item cards__sort-item_default" value="" selected disabled hidden>Sort options</option>
             <option class="cards__sort-item" value="date">Date</option>
             <option class="cards__sort-item" value="price">Price</optioni>
             <option class="cards__sort-item" value="year">Year</option>
