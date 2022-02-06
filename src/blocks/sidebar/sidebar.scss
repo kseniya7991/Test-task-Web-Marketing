@@ -12,17 +12,83 @@
     flex-direction: column;
     position: sticky;
 
-    padding: 20px;
+    &__results {
+        font-size: 16px;
+        font-weight: 500;
+        width: 100%;
+    
+        border-bottom: 1px solid $borders;
+        padding-bottom: 15px;
+    }
+    
 }
 
-.sidebar__results {
-    font-size: 16px;
-    font-weight: 500;
+
+// Заголовок блока фильтров в мобильной версии
+.sidebar__heading {
+    display: none;
+    position: relative;
+    margin: 0;
+    text-transform: uppercase;
+    color: $default-text;
+    font-size: 25px;
     width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    align-self: center;
+    padding: 20px;
+    transition: .1s;
 
-    border-bottom: 1px solid $borders;
-    padding-bottom: 15px;
+    &:hover {
+        background-color: $filter-background;
+        transition: .2s;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 30px;
+        height: 30px;
+        background-image: url('../../img/filter.png');
+        background-size: contain;
+        background-position: center;
+        right: 35%;
+    }
+
+    @include mediaNetbook {
+        display: block;
+    }
+
+    @include mediaTablet {
+        font-size: 20px;
+        padding: 16px;
+    }
 }
+
+// общий блок с фильтрами, для сворачивания в mobile
+.sidebar__filter-wrap {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 20px;
+
+    @include mediaNetbook {
+        transition: all 0.3s ease-out;
+        max-height: 0;
+        padding: 0;
+    }
+
+    &_active {
+        padding: 0 20px 20px;
+        -webkit-transition:max-height 0.4s linear;
+        -moz-transition:max-height 0.4s linear;
+        transition:max-height 0.4s linear;
+        transition: .7s;
+        opacity: 1;
+        max-height: 800px;
+    }
+}
+
 
 .sidebar__filter-name {
     position: relative;
@@ -56,12 +122,6 @@
             animation: rotateArrowOpen .5s forwards;
         }
     }
-
-    // Поведение стрелки при нажатии на фильтр
-    &_active {
-        
-    }
-
 
 }
 
@@ -201,4 +261,16 @@
         box-shadow: 0px 1px 2px 1px $button-hover;
         transition: .1s;
     }
+}
+
+
+// Брейк поинты
+
+@include mediaNetbook {
+    .sidebar {
+        width: 100%; 
+        cursor: pointer;
+    }
+    .sidebar__button-search {width: 30%; align-self: center;}
+
 }

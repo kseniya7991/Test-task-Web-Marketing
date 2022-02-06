@@ -55,6 +55,10 @@
             transition: .2s;
             background-color: $primary-color;
         }
+
+        @include mediaTablet {
+            font-size: 14px;
+        }
     }
 }
 
@@ -149,7 +153,7 @@
 .cards {
     &__item {
         width: 100%;
-        max-height: 200px;
+        max-height: min-content;
         background-color: $white;
     
         padding: 16px;
@@ -174,12 +178,13 @@
 
     &__wrap {
         display: flex;
+        margin-right: 15px;
     }
 
     &__img-block {
         position: relative;
         background-color: gray;
-        width: 224px;
+        min-width: 224px;
         height: 168px;
         margin-right: 20px;
     
@@ -208,9 +213,13 @@
         flex-direction: column;
         justify-content: space-between;
         max-height: 100%;
-        width: 50%;
+        max-width: 50%;
         align-items: flex-start;
         overflow: hidden;
+
+        @include mediaMax {
+            max-width: 100%;
+        }
     }
 
     &__text-wrap {
@@ -238,12 +247,15 @@
     &__params {
         display: flex;
         @include resetUl;
+
+        flex-wrap: wrap;
     }
 
     &__params-item {
         width: max-content;
         padding: 5px 8px;
         margin-right: 16px;
+        margin-bottom: 10px;
     
         font-size: 12px;
         font-weight: 300;
@@ -269,6 +281,11 @@
     font-size: 16px;
     max-width: 70%;
     line-height: 1.5;
+
+    @include mediaNetbook {
+        font-size: 14px;
+        max-width: 100%;
+    }
 }
 
 

@@ -8,8 +8,9 @@ import Section from './components/section.js';
 const navListSection = '.navigation__list';
 const crumbsListSection = '.breadcrumb__list';
 const cardsSection = '.cards__list';
-const filter = document.querySelectorAll('.sidebar__filter-name');
+const filterName = document.querySelectorAll('.sidebar__filter-name');
 const sort = document.querySelectorAll('.cards__sort-list');
+const filterHeading = document.querySelector('.sidebar__heading');
 
 function updateMeta() {
 document.title = data.page_meta.title;
@@ -84,25 +85,33 @@ const cardList = new Section(
     cardsSection,
 )
 
-// Открытие фильтра в сайдбаре
-
-function filterOpen(item) {
+// Открытие/сворачивание параметров фильтра в сайдбаре
+function handleFilterParams(item) {
     const paramsList = document.querySelector(`.sidebar__params_${item.id}`);
     paramsList.classList.toggle('sidebar__params_active');
     item.classList.toggle('sidebar__filter-name_active');
     return;
 } 
 
+
+// Анимация блока сортировки при нажатии
 function sortSelect(item) {
     const parentSort = item.closest('.cards__sort')
     parentSort.classList.toggle('cards__sort_active');
     return;
 }
 
+// Раскрытие/сворачивание фильтра в мобильной версии
+function handleFilter(e) {
+    const filterList = document.querySelector('.sidebar__filter-wrap');
+    filterList.classList.toggle('sidebar__filter-wrap_active');
+    return;
+}
 
-filter.forEach((item) => {
+
+filterName.forEach((item) => {
     item.addEventListener('click', () => {
-        filterOpen(item)
+        handleFilterParams(item)
     })
 })
 
@@ -112,8 +121,9 @@ sort.forEach((item) => {
     })
 })
 
-console.log(sort)
-
+filterHeading.addEventListener('click', (e) => {
+    handleFilter(e)
+})
 
 
 navList.renderer(data.nav)

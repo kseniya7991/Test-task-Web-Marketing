@@ -77,3 +77,40 @@
     }
 }
 
+// Миксины для брейкпоинтов
+
+@mixin mediaMax {
+    @media (max-width: #{$breakpoint-max}) {
+      @content;
+    }
+}
+
+@mixin mediaPc{
+    @media (max-width: #{$breakpoint-pc}) {
+      @content;
+    }
+}
+
+@mixin mediaNetbook {
+    @media (max-width: #{$breakpoint-netbook}) {
+      @content;
+    }
+}
+
+@mixin mediaTablet {
+    @media (max-width: #{$breakpoint-tablet}) {
+      @content;
+    }
+}
+
+@mixin mediaMobile {
+    @media (max-width: #{$breakpoint-mobile}) {
+      @content;
+    }
+}
+
+@mixin mediaMin {
+    @media (max-width: #{$breakpoint-min}) {
+      @content;
+    }
+}

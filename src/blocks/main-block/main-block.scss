@@ -19,5 +19,18 @@
         font-size: 22px;
         line-height: 26px;
         color: $black;
+
+        @include  mediaTablet{
+            font-size: 20px;
+        }
+    }
+
+    @include mediaNetbook {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "hd"
+        "sb"
+        "cd";
     }
 }
